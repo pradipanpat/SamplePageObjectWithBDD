@@ -1,0 +1,52 @@
+Framework : 
+	1. TestNG
+	2. JUnit
+	3. Keyword Driven 
+	4. Data Driven
+	5. Behaviour Driver
+	6. Hybrid {combination two or more}
+	
+BDD (Behaviour Driver Development)
+	
+	BDD --> Scenarios {Behaviour is defined} --converted to--> test cases
+	
+	BDD Framework important parts are --> 1. Feature file 2. Step Definition 3. Test Runner
+	
+	1. Feature File : 
+			Scenarios, Scenarios Outline & Background are written usign gherkin keyword
+			
+	2. Step Definition : 
+			Run the feature as Cucumber option --> it will generates snippets in console
+			Use these snippets to implement the test cases in step definition classes
+	
+	3. Runner File :
+			we specify the cucumber option
+				a. feature --> either specific feature file or folder where feature files are present
+				b. glue --> we specify the step definition classes package name and hooks class package name
+				c. tags --> in order to execute the specific scenario from the feature file we can use tags and specify those tags here
+				d. plugin --> report generations
+				e. monochrome --> to make console more readable
+	
+	It was a maven project, so with the help of pom.xml where all the dependencies were added related to the tools used.
+	Basically we have used page object model to design the framework
+	Under page object model we have created separate class for each web page, and there we have implemented encapsulation concepts
+	For reporting we have used extent reports
+	we are running this maven project through batch file.
+			
+
+Difference between BDD hooks and background
+
+	Background is written in the feature file
+	If you have certain pre-conditions which you want business unit to know then include that into background
+	Background will be executed before every scenario of that feature file
+	
+	BDD Hooks
+	If you certain pre-conditions which are more technical and if you don't want to show it to business unit
+	then those pre-conditions we can include in hooks
+	Business unit will not look into hooks
+	Hooks are to two type
+		1. Before : executed before every scenario
+		2. After : executed after every scenario
+	we can have multiple hooks, and also we can define their priority of execution.
+	
+Order of execution --> first hooks are executed then background will be executed then scenario

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="none" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test parallel="none" name="Test(failed)">
+    <classes>
+      <class name="testscripts.Testcase">
+        <methods>
+          <include name="test"/>
+        </methods>
+      </class> <!-- testscripts.Testcase -->
+      <class name="testscripts.TestLoginPage">
+        <methods>
+          <include name="testVtigerLogin"/>
+        </methods>
+      </class> <!-- testscripts.TestLoginPage -->
+      <class name="testscripts.TestLeadsPage">
+        <methods>
+          <include name="tearDown"/>
+          <include name="prerequisite"/>
+          <include name="testLeadDeletion"/>
+          <include name="testLeadCreation"/>
+        </methods>
+      </class> <!-- testscripts.TestLeadsPage -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
